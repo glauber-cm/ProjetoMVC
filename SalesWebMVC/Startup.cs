@@ -10,9 +10,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using SalesWebMVC.Data;
+using SalesWebMvc.Models;
+using SalesWebMvc.Data;
 
-namespace SalesWebMVC
+namespace SalesWebMvc
 {
     public class Startup
     {
@@ -36,9 +37,9 @@ namespace SalesWebMVC
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<SalesWebMVCContext>(options =>
-                    options.UseMySql(Configuration.GetConnectionString("SalesWebMVCContext"), builder =>
-                        builder.MigrationsAssembly("SalesWebMVC")));
+            services.AddDbContext<SalesWebMvcContext>(options =>
+                    options.UseMySql(Configuration.GetConnectionString("SalesWebMvcContext"), builder =>
+                        builder.MigrationsAssembly("SalesWebMvc")));
 
             services.AddScoped<SeedingService>();
         }
