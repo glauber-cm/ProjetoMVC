@@ -15,6 +15,7 @@ using SalesWebMvc.Models;
 using SalesWebMvc.Data;
 using SalesWebMVC.Services;
 using System.Globalization;
+using SalesWebMvc.Services;
 
 namespace SalesWebMvc
 {
@@ -47,6 +48,7 @@ namespace SalesWebMvc
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
             services.AddScoped<DepartmentService>();
+            services.AddScoped<SalesRecordService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
